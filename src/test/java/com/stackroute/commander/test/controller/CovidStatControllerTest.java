@@ -82,7 +82,6 @@ class CovidStatControllerTest {
        
 
        final String baseUrl = "http://localhost:8080/api/v1/covidstat";
-       URI uri = new URI(baseUrl);
        ResponseEntity<String> result = restTemplate.getForEntity(baseUrl, String.class);
        /*
                Verify request succeed
