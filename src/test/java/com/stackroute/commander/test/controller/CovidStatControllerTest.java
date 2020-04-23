@@ -77,30 +77,7 @@ class CovidStatControllerTest {
         verify(covidStatService, times(1)).getCovidStat();
     }
 
-    @Test
-    void givenCorrectUrlShouldCheckForPositiveResponse()  {
-       
-
-       final String baseUrl = "http://localhost:8080/api/v1/covidstat";
-       ResponseEntity<String> result = restTemplate.getForEntity(baseUrl, String.class);
-       /*
-               Verify request succeed
-       */
-       Assert.assertEquals(200, result.getStatusCodeValue());
-       Assert.assertEquals(true, result.getBody().contains("employeeList"));
-
-
-//        mockServer.expect(requestTo("http://google.com"))
-//                .andExpect(method(HttpMethod.GET))
-//                .andRespond(withSuccess("resultSuccess", MediaType.TEXT_PLAIN));
-//
-//        String result = simpleRestService.getMessage();
-//
-//        mockServer.verify();
-//        assertThat(result, allOf(containsString("SUCCESS"),
-//                containsString("resultSuccess")));
-    }
-
+    
     public static String asJsonString(final Object obj) {
         try {
             return new ObjectMapper().writeValueAsString(obj);
