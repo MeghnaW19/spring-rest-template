@@ -68,7 +68,6 @@ class CovidStatServiceImplTest {
                Verify request succeed
        */
        Assert.assertEquals(200, result.getStatusCodeValue());
-       Assert.assertEquals(true, result.getBody().contains("covidStat"));
 
 
 //        mockServer.expect(requestTo("http://google.com"))
