@@ -17,7 +17,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.client.RestTemplate;
 import static org.mockito.Mockito.*;
 
 
@@ -31,22 +30,13 @@ class CovidStatControllerTest {
     private CovidStatController covidStatController;
 
     private CovidStat covidStat;
-
-    private MockRestServiceServer mockServer;
-
-    @Autowired
-    RestTemplate restTemplate = new RestTemplate();
-
-
-
+    
     /**
      * Run this before each test case
      */
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(covidStatController).build();
-
-        mockServer = MockRestServiceServer.createServer(restTemplate);
 
     }
 
