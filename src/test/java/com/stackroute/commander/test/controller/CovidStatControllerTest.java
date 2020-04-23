@@ -3,13 +3,10 @@ package com.stackroute.commander.test.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.commander.test.domain.CovidStat;
 import com.stackroute.commander.test.service.CovidStatService;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -21,8 +18,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
-
-import java.net.URISyntaxException;
 import static org.mockito.Mockito.*;
 
 
@@ -77,7 +72,6 @@ class CovidStatControllerTest {
         verify(covidStatService, times(1)).getCovidStat();
     }
 
-    
     public static String asJsonString(final Object obj) {
         try {
             return new ObjectMapper().writeValueAsString(obj);
