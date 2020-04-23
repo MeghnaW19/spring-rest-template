@@ -79,18 +79,16 @@ class CovidStatControllerTest {
 
     @Test
     void givenCorrectUrlShouldCheckForPositiveResponse()  {
-        CovidStat covidStat1 = restTemplate.getForObject("http://localhost:8080/api/v1/covidstat", CovidStat.class );
-        assertEquals(covidStat, covidStat1);
+       
 
-
-//        final String baseUrl = "http://localhost:8080/api/v1/covidstat";
-//        URI uri = new URI(baseUrl);
-//        ResponseEntity<String> result = restTemplate.getForEntity(baseUrl, String.class);
-//        /*
-//                Verify request succeed
-//        */
-//        Assert.assertEquals(200, result.getStatusCodeValue());
-//        Assert.assertEquals(true, result.getBody().contains("employeeList"));
+       final String baseUrl = "http://localhost:8080/api/v1/covidstat";
+       URI uri = new URI(baseUrl);
+       ResponseEntity<String> result = restTemplate.getForEntity(baseUrl, String.class);
+       /*
+               Verify request succeed
+       */
+       Assert.assertEquals(200, result.getStatusCodeValue());
+       Assert.assertEquals(true, result.getBody().contains("employeeList"));
 
 
 //        mockServer.expect(requestTo("http://google.com"))
