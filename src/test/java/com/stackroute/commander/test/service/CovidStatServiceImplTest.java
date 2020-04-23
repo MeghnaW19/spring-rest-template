@@ -17,9 +17,6 @@ class CovidStatServiceImplTest {
         RestTemplate restTemplate = new RestTemplate();
         String baseUrl = "http://localhost:8088/api/v1/covidstat";
         CovidStat result = restTemplate.getForObject(baseUrl, CovidStat.class);
-        /*
-                Verify request succeed
-        */
         System.out.println(result);
 
     }
